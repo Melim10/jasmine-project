@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <main>
+        <!-- #game-intro is initially shown on the game start screen -->
+        <div id="game-intro">
+          <img src="images/Jasmine.png" alt="" class="logo-img" />
+          <br />
+          <button id="start-button">Start Game</button>
+          <p>Use the left and right arrow to control the car!</p>
+          <img src="images/arrows.png" alt="" class="arrows-img" />
+        </div>
+  
+        <div id="game-container">
+          <div>
+            <h2>Stats</h2>
+            <p>Progress: <span id="progress">0</span></p>
+          </div>
+          <!-- #game-screen is initially hidden using CSS style display: none -->
+          <div id="game-screen"></div>
+        </div>
+  
+        <!-- #game-end is initially hidden using CSS style display: none -->
+        <div id="game-end">
+          <img src="images/Jasmine.png" alt="" class="logo-img" />
+          <h1>Game Over</h1>
+          <br />
+          <button id="restart-button">Restart</button>
+        </div>
+      </main>
+
     <script src="js/jasmine.js"></script>
     <script src="js/player.js"></script>
     <script src="js/game.js"></script>
