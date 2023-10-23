@@ -51,6 +51,10 @@ class Game {
     update(){
         if(this.jasmine.state===true && this.player.isMoving===true){
             this.endGame()
+        } else if(this.jasmine.state===true && this.player.isMoving===false){
+            this.jasmine.element.src = "images/jasmin angry.png"
+        } else if(this.jasmine.state===false){
+            this.jasmine.element.src = "images/jasmin-sleeping.png"
         }else if(this.jasmine.loop===false){
             this.endGame()
         }
