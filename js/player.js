@@ -8,6 +8,9 @@ class Player{
         this.directionX = 0
         this.directionY = 0
         this.imgSrc = imgSrc
+        this.isMoving=false
+
+        this.enemy = false
         this.element = document.createElement("img")
 
         this.element.src = imgSrc
@@ -45,6 +48,15 @@ class Player{
     }
 
     didGetCaught(){
+
+        
+        if(!this.enemy){
+                this.enemy=new Jasmine(this.gameScreen)
+        }
+        this.enemy.updateState()
+        if(this.isMoving==true ){
+            console.log("game over")
+        }
         
     }
 
@@ -63,3 +75,4 @@ class Player{
           }
     }
 }
+
