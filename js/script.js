@@ -8,7 +8,6 @@ window.onload = function () {
   
     function startGame() {
       game = new Game()
-  
       game.start()
     }
     

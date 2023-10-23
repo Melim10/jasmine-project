@@ -21,6 +21,7 @@ class Player{
         this.element.style.top = `${this.top}px`
         
         this.gameScreen.appendChild(this.element);
+        
     }
 
     move(){
@@ -39,27 +40,22 @@ class Player{
             this.top=0
         }
 
+        
         this.updatePosition()
     }
 
     updatePosition(){
         this.element.style.left= `${this.left}px`
         this.element.style.top = `${this.top}px`
-    }
 
+    }
+    
     didGetCaught(){
-
         
-        if(!this.enemy){
-                this.enemy=new Jasmine(this.gameScreen)
-        }
-        this.enemy.updateState()
-        if(this.isMoving==true ){
-            console.log("game over")
-        }
+        
         
     }
-
+    
     didGetTicket(ticket){
         const playerRect = this.element.getBoundingClientRect()
         const ticketRect = ticket.element.getBoundingClientRect()
