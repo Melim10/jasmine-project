@@ -6,19 +6,19 @@ class Jasmine{
         this.width = width
         this.height = height
         this.imgSrc = imgSrc
-        // this.element = document.createElement("img")
+        this.element = document.createElement("img")
         this.state=false
-        this.count= 0
+        this.loop= true
         this.startedInterval=false
 
-        // this.element.src = imgSrc
-        // this.element.style.position = "absolute"
-        // this.element.style.width = `${this.width}px`
-        // this.element.style.height = `${this.height}px`
-        // this.element.style.left = `${this.left}px`
-        // this.element.style.top = `${this.top}px`
+        this.element.src = imgSrc
+        this.element.style.position = "absolute"
+        this.element.style.width = `${this.width}px`
+        this.element.style.height = `${this.height}px`
+        this.element.style.left = `${this.left}px`
+        this.element.style.top = `${this.top}px`
         
-        // this.gameScreen.appendChild(this.element);
+        this.gameScreen.appendChild(this.element);
     }
 
     updateState(){
@@ -41,9 +41,10 @@ class Jasmine{
             this.state=false
             // console.log(this.state) 
         } 
-      if(times===6){
+      if(times===5){
         clearInterval(myCounterLoop);
         this.startedInterval = false;
+        this.loop= false
       }
     }, 1000)
 }

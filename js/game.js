@@ -6,14 +6,16 @@ class Game {
         this.gameEndScreen = document.querySelector("#game-end")
         this.player = new Player(
             this.gameScreen,
-            200,
-            500,
-            100,
+            425,
+            1000,
             150,
-            "images/car.png"
+            150,
+            "images/student happy.png"
           );
-        this.height = 600
-        this.width = 500
+
+          this.jasmine=new Jasmine(this.gameScreen, 425, 0, 150, 150, "images/jasmin-sleeping.png")
+        this.height = 850
+        this.width = 1000
         this.tickets = []
         this.gameIsOver = false
         this.loadingTicket = false
@@ -28,23 +30,35 @@ class Game {
 
         this.gameScreen.style.display = "block"
 
-        this.player.didGetCaught()
+        
         this.gameLoop();
+        this.jasmine.updateState()
+        
     }
-
+    
     gameLoop(){
         if(this.gameIsOver === true){
             return
         }
-
+        
         this.update()
-
+        
         window.requestAnimationFrame(() => this.gameLoop());
-
-
+        
+        
     }
-
+    
     update(){
+        if(this.jasmine.state===true && this.player.isMoving===true){
+            this.endGame()
+        }else if(this.jasmine.loop===false){
+            this.endGame()
+        }
+
+        if(this.player.top===0){
+            this.endGame()
+        }
+        
 
         this.player.move()
 
@@ -79,6 +93,7 @@ class Game {
 
     endGame(){
         this.gameIsOver=true
+        
         this.player.element.remove();
         this.tickets.forEach(ticket=>{
             ticket.element.remove();
@@ -86,7 +101,6 @@ class Game {
 
         this.gameScreen.style.display="none"
         this.gameEndScreen.style.display="block"
-        lives.innerHTML=0
     }
 
     
