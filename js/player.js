@@ -8,6 +8,9 @@ class Player{
         this.directionX = 0
         this.directionY = 0
         this.imgSrc = imgSrc
+        this.isMoving=false
+
+        this.enemy = false
         this.element = document.createElement("img")
 
         this.element.src = imgSrc
@@ -44,8 +47,18 @@ class Player{
         this.element.style.top = `${this.top}px`
     }
 
-    didGetCaught(){}
-      
+    didGetCaught(){
+
+        
+        if(!this.enemy){
+                this.enemy=new Jasmine(this.gameScreen)
+        }
+        this.enemy.updateState()
+        if(this.isMoving==true ){
+            console.log("game over")
+        }
+        
+    }
 
     didGetTicket(ticket){
         const playerRect = this.element.getBoundingClientRect()
@@ -62,3 +75,4 @@ class Player{
           }
     }
 }
+

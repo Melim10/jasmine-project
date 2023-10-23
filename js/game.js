@@ -28,6 +28,7 @@ class Game {
 
         this.gameScreen.style.display = "block"
 
+        this.player.didGetCaught()
         this.gameLoop();
     }
 
@@ -39,21 +40,17 @@ class Game {
         this.update()
 
         window.requestAnimationFrame(() => this.gameLoop());
+
+
     }
 
     update(){
-        let score = document.getElementById("score")
-        let lives = document.getElementById("lives")
-
-        score.innerHTML= this.score
-        lives.innerHTML= this.lives
 
         this.player.move()
 
         if(!this.tickets.length && !this.loadingTicket){
             this.loadingTicket = true
             setTimeout(()=>{
-                this.obstacles.push(new Ticket(this.gameScreen))
                 this.loadingTicket=false
             }, 500)
         }
@@ -92,5 +89,6 @@ class Game {
         lives.innerHTML=0
     }
 
-
+    
+    
 }

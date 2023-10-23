@@ -31,22 +31,24 @@ window.onload = function () {
           switch(key){
             case "ArrowLeft":
               game.player.directionX = -1;
-              pressed === true;
+              game.player.isMoving= true
+              console.log("its moving")
+              console.log(game.player.isMoving)
               break;
   
             case "ArrowUp":
               game.player.directionY = -1
-              pressed === true;
+              game.player.isMoving= true
               break;
   
             case "ArrowRight":
               game.player.directionX = 1
-              pressed === true;
+              game.player.isMoving= true
               break;
             
             case "ArrowDown":
               game.player.directionY = 1
-              pressed === true;
+              game.player.isMoving= true
               break
           }
           
@@ -72,19 +74,24 @@ window.onload = function () {
           switch(key){
             case "ArrowLeft":
               game.player.directionX = 0;
-              
+              game.player.isMoving= false
+              console.log("its moving")
+              console.log(game.player.isMoving)
               break;
   
             case "ArrowUp":
               game.player.directionY = 0
+              game.player.isMoving= false
               break;
   
             case "ArrowRight":
               game.player.directionX = 0
+              game.player.isMoving= false
               break;
             
             case "ArrowDown":
               game.player.directionY = 0
+              game.player.isMoving= false
               break
           }
           
