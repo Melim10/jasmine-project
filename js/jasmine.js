@@ -1,21 +1,21 @@
 class Jasmine{
     constructor(gameScreen, left, top, width, height, imgSrc){
-        this.gameScreen = gameScreen
-        this.left = left
-        this.top = top
-        this.width = width
-        this.height = height
-        this.imgSrc = imgSrc
-        this.element = document.createElement("img")
-        this.state=false
-        this.count= 0
+        this.gameScreen = gameScreen;
+        this.left = left;
+        this.top = top;
+        this.width = width;
+        this.height = height;
+        this.imgSrc = imgSrc;
+        this.element = document.createElement("img");
+        this.state = false;
+        this.count= 0;
 
-        this.element.src = imgSrc
-        this.element.style.position = "absolute"
-        this.element.style.width = `${this.width}px`
-        this.element.style.height = `${this.height}px`
-        this.element.style.left = `${this.left}px`
-        this.element.style.top = `${this.top}px`
+        this.element.src = imgSrc;
+        this.element.style.position = "absolute";
+        this.element.style.width = `${this.width}px`;
+        this.element.style.height = `${this.height}px`;
+        this.element.style.left = `${this.left}px`;
+        this.element.style.top = `${this.top}px`;
         
         this.gameScreen.appendChild(this.element);
     }
@@ -26,12 +26,11 @@ class Jasmine{
         }else{
             this.state=false
         }
-    }
+        let counterLoop = 0;
 
-    
-}
-let counterLoop = 0;
-let times = 0
+
+    let times = 0
+
     let myCounterLoop = setInterval(() => {
         counterLoop ++;
         if (counterLoop > 0 && counterLoop <= 3){
@@ -46,4 +45,9 @@ let times = 0
         clearInterval(myCounterLoop)
       }
     }, 1000)
+    }
+
+    
+}
+
 

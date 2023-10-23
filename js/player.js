@@ -44,9 +44,8 @@ class Player{
         this.element.style.top = `${this.top}px`
     }
 
-    didGetCaught(){
-        
-    }
+    didGetCaught(){}
+      
 
     didGetTicket(ticket){
         const playerRect = this.element.getBoundingClientRect()

@@ -11,7 +11,8 @@ window.onload = function () {
   
       game.start()
     }
-  
+    
+
     // function that handles keys events
     function handleKeyDown(event){
       const key = event.key
@@ -30,18 +31,22 @@ window.onload = function () {
           switch(key){
             case "ArrowLeft":
               game.player.directionX = -1;
+              pressed === true;
               break;
   
             case "ArrowUp":
               game.player.directionY = -1
+              pressed === true;
               break;
   
             case "ArrowRight":
               game.player.directionX = 1
+              pressed === true;
               break;
             
             case "ArrowDown":
               game.player.directionY = 1
+              pressed === true;
               break
           }
           
@@ -67,6 +72,7 @@ window.onload = function () {
           switch(key){
             case "ArrowLeft":
               game.player.directionX = 0;
+              
               break;
   
             case "ArrowUp":
@@ -85,6 +91,9 @@ window.onload = function () {
         }
       }
     }
+
+    
+
   
     window.addEventListener("keydown", handleKeyDown)
     window.addEventListener("keyup", handleKeyUp)
