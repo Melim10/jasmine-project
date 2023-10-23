@@ -30,16 +30,20 @@ class Jasmine{
 
     
 }
-function countUntil30() {
-    let count = 1;
-    const interval = setInterval(function () {
-      console.log(count);
-      count++;
-      if (count > 30) {
-        clearInterval(interval);
+let counterLoop = 0;
+let times = 0
+    let myCounterLoop = setInterval(() => {
+        counterLoop ++;
+        if (counterLoop > 0 && counterLoop <= 3){
+            console.log(counterLoop);               // FAZER COUNTER VISIVEL NO SCREEN
+        } else if (counterLoop >= 4 && counterLoop <= 5){
+            this.state = true;                   // JASMIN STATE ACTIVATE
+        } else if (counterLoop >= 5){
+            counterLoop = 0;
+            times++
+        } 
+      if(times===6){
+        clearInterval(myCounterLoop)
       }
-    }, 1000); // Count every 1 second (1000 milliseconds)
-  }
-  
-  // Start the counting process
-  countUntil30();
+    }, 1000)
+
