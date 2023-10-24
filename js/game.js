@@ -7,7 +7,7 @@ class Game {
     this.gameWonScreen = document.querySelector("#game-won");
     this.player = new Player(
       this.gameScreen,
-      425,
+      700,
       1000,
       150,
       150,
@@ -16,14 +16,14 @@ class Game {
 
     this.jasmine = new Jasmine(
       this.gameScreen,
-      425,
-      0,
+      1200,
+      35,
       150,
       150,
       "images/jasmin-sleeping.png"
     );
-    this.height = 850;
-    this.width = 1000;
+    this.height = 930;
+    this.width = 1550;
     this.tickets = [];
     this.gameIsOver = false;
     this.loadingTicket = false;
