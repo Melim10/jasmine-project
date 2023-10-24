@@ -1,6 +1,7 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
+  const restartButton2 = document.getElementById("restart-button2");
 
   startButton.addEventListener("click", function () {
     startGame();
@@ -10,6 +11,8 @@ window.onload = function () {
     game = new Game()
     game.start()
   }
+
+  
   
 
   // function that handles keys events
@@ -127,5 +130,9 @@ window.onload = function () {
 
   restartButton.addEventListener("click", ()=>{
     location.reload()
-  }) 
+  })
+
+  restartButton2.addEventListener("click", ()=>{
+    location.reload()
+  })
 };

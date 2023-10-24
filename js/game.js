@@ -64,12 +64,13 @@ class Game {
       this.jasmine.element.src = "images/jasmin angry.png";
     } else if (this.jasmine.state === false) {
       this.jasmine.element.src = "images/jasmin-sleeping.png";
-    } else if (this.jasmine.loop === false) {
+    } 
+    if (this.jasmine.loop === false) {
       this.endGame();
     }
 
     if (this.player.top === 0) {
-      this.endGame();
+      this.gameWon();
     }
 
     this.player.move();
@@ -116,13 +117,19 @@ class Game {
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
 
-    if (this.player.top === 0) {
-      this.gameWonScreen.style.display = "block";
-      this.gameEndScreen.style.display = "none";
-    } 
+    
 }
 
   ticketCounter() {
     return this.ticketCount;
   }
+
+  gameWon(){
+    this.gameWonScreen.style.display = "block";
+    this.gameEndScreen.style.display = "none";
+    this.gameScreen.style.display = "none"
+
+  }
+
+  
 }

@@ -10,6 +10,7 @@ class Jasmine{
         this.state=false
         this.loop= true
         this.startedInterval=false
+        this.gameEndScreen = document.querySelector("#game-end");
 
         this.element.src = imgSrc
         this.element.style.position = "absolute"
@@ -40,10 +41,11 @@ class Jasmine{
             times++
             this.state=false
         } 
-      if(times===2){
+      if(times===5){
+        console.log("OVER")
+        this.loop = false;
+        console.log(`this is the loop state ${this.loop}`)
         clearInterval(myCounterLoop);
-        this.startedInterval = false;
-        this.loop= false
       }
     }, 1000)
 }

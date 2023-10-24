@@ -29,17 +29,7 @@ body {
     display: none;
   }
   
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
+ 
   
   #game-end {
     display: none;
