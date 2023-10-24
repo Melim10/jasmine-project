@@ -29,22 +29,42 @@ window.onload = function () {
       if(game){
         switch(key){
           case "ArrowLeft":
-            game.player.directionX = -1;
+            if(game.ticketCounter() === 0){
+              game.player.directionX = -1;
+            }
+            else {
+              game.player.directionX = game.ticketCounter() * -2;
+            }
             game.player.isMoving= true
             break;
 
           case "ArrowUp":
-            game.player.directionY = -1
+            if(game.ticketCounter() === 0){
+              game.player.directionY = -1;
+            }
+            else {
+              game.player.directionY = game.ticketCounter() * -2;
+            }
             game.player.isMoving= true
             break; 
 
           case "ArrowRight":
-            game.player.directionX = 1
+            if(game.ticketCounter() === 0){
+              game.player.directionX = 1;
+            }
+            else {
+              game.player.directionX = game.ticketCounter() * 2;
+            }
             game.player.isMoving= true
             break; 
           
           case "ArrowDown":
-            game.player.directionY = 1
+            if(game.ticketCounter() === 0){
+              game.player.directionY = 1;
+            }
+            else {
+              game.player.directionY = game.ticketCounter() * 2;
+            }
             game.player.isMoving= true
             break
         }

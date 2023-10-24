@@ -40,7 +40,7 @@ class Jasmine{
             times++
             this.state=false
         } 
-      if(times===5){
+      if(times===2){
         clearInterval(myCounterLoop);
         this.startedInterval = false;
         this.loop= false

@@ -24,6 +24,10 @@ body {
     background-size: cover;
     animation: slide 5s linear infinite;
   }
+
+  #game-won{
+    display: none;
+  }
   
   @keyframes slide {
     0% {
