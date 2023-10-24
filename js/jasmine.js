@@ -26,20 +26,19 @@ class Jasmine{
         let times = 0
         if(!this.startedInterval){
         this.startedInterval = true;
+        let visualCounter = document.getElementById("counter");
         let myCounterLoop = setInterval(() => {
         counterLoop ++;
+        visualCounter.innerHTML = "0";
         if (counterLoop > 0 && counterLoop <= 3){
-            console.log(counterLoop); 
+            visualCounter.innerHTML = counterLoop;
             this.state= false
-            // console.log(this.state)               // FAZER COUNTER VISIVEL NO SCREEN
         } else if (counterLoop >= 4 && counterLoop <= 5){
             this.state = true;
-            // console.log(this.state)                   // JASMIN STATE ACTIVATE
         } else if (counterLoop >= 5){
             counterLoop = 0;
             times++
             this.state=false
-            // console.log(this.state) 
         } 
       if(times===5){
         clearInterval(myCounterLoop);
@@ -52,5 +51,3 @@ class Jasmine{
 
     
 }
-
-

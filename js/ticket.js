@@ -1,14 +1,13 @@
 class Ticket{
-    constructor(gameScreen, left, top, width, height, imgSrc){
+    constructor(gameScreen){
         this.gameScreen = gameScreen
         this.left = Math.floor(Math.random()*300 + 70)
         this.top = Math.floor(Math.random()*300 + 70)
         this.width = 100
         this.height = 150
-        this.imgSrc = imgSrc
         this.element = document.createElement("img")
 
-        this.element.src= ""
+        this.element.src= "images/ticket.png"
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;

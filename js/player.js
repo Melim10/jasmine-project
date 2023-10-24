@@ -9,6 +9,7 @@ class Player{
         this.directionY = 0
         this.imgSrc = imgSrc
         this.isMoving=false
+        this.ticketCount = 0;
 
         this.enemy = false
         this.element = document.createElement("img")
@@ -30,13 +31,13 @@ class Player{
 
         if(this.left + this.width >= this.gameScreen.offsetWidth ){
             this.left = this.gameScreen.offsetWidth - this.width
-        }else if(this.left<=0){
+        } else if(this.left<=0){
             this.left=0
         }
 
         if(this.top + this.height >= this.gameScreen.offsetHeight){
             this.top = this.gameScreen.offsetHeight - this.height
-        }else if(this.top<=0){
+        } else if(this.top<=0){
             this.top=0
         }
 
@@ -49,12 +50,7 @@ class Player{
         this.element.style.top = `${this.top}px`
 
     }
-    
-    didGetCaught(){
-        
-        
-        
-    }
+
     
     didGetTicket(ticket){
         const playerRect = this.element.getBoundingClientRect()
@@ -65,10 +61,11 @@ class Player{
             playerRect.top < ticketRect.bottom &&
             playerRect.bottom > ticketRect.top
           ) {
+            this.ticketCount ++;
+            console.log(this.ticketCount)
             return true;
           } else {
             return false;
           }
     }
 }
-

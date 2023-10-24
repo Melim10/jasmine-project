@@ -10,7 +10,7 @@ class Game {
             1000,
             150,
             150,
-            "images/student happy.png"
+            "images/student 02.png"
           );
 
           this.jasmine=new Jasmine(this.gameScreen, 425, 0, 150, 150, "images/jasmin-sleeping.png")
@@ -20,6 +20,9 @@ class Game {
         this.gameIsOver = false
         this.loadingTicket = false
         this.time = 30
+        this.ticketCount = 0;
+
+
     }
 
     start(){
@@ -69,8 +72,9 @@ class Game {
         if(!this.tickets.length && !this.loadingTicket){
             this.loadingTicket = true
             setTimeout(()=>{
+                this.tickets.push(new Ticket(this.gameScreen));
                 this.loadingTicket=false
-            }, 500)
+            }, 12000)
         }
 
        for(let i=0; i<this.tickets.length; i++){
@@ -78,14 +82,19 @@ class Game {
         ticket.move()
 
         if (this.player.didGetTicket(ticket)) {
+            this.player.directionX *= 5;            // NOT SPEED BUT RATHER HIGHER AXIS VALUES 
+            this.player.directionY *= 5;            // MAYONLY WORK ON THE FIRST TICKET!?
             ticket.element.remove()
+            this.tickets.splice(i,1)
 
-            this.tickets.splice(i,1)
         }
-        else if(ticket.top > this.height){
-            this.score++
-            ticket.element.remove()
-            this.tickets.splice(i,1)
+        else if(!this.player.didGetTicket(ticket)){
+            this.ticketCount ++;
+            setTimeout(() =>{
+                ticket.element.remove()             // TICKET REMOVE
+                this.tickets.splice(i,1)
+            }, 6000)
+            
         }
 
 
