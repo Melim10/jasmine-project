@@ -1,7 +1,7 @@
 class Ticket{
     constructor(gameScreen, top){
         this.gameScreen = gameScreen
-        this.left = Math.floor(Math.random()*300 + 70)
+        this.left = Math.floor(Math.random()*1250 + 70)
         this.top = top
         this.width = 100
         this.height = 150

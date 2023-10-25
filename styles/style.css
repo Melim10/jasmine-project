@@ -29,6 +29,25 @@ body {
     display: none;
   }
   
+  #obstacles img{
+    width: 125px;
+    height: 175px;
+  }
+
+  .obstacle.one{
+    top: 200px;
+    left: 100px;
+  }
+
+  .obstacle.two{
+    margin-top: 100px;
+    margin-right: 400px;
+  }
+
+  .obstacle.three{
+    margin-left: 150px;
+    margin-top: 50px;
+  }
  
   
   #game-end {

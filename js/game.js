@@ -75,6 +75,10 @@ class Game {
         // const jasmine1 = new Audio("./audio/hello-02.wav")
         // jasmine1.volume = 0.04
 
+        // if(this.player.didCollide()){
+        //   console.log("COLLIDED")
+        // }
+
         if (this.jasmine.state === true && this.player.isMoving === true) {
           this.jasmine.loop=false
           this.statsContainer.style.display="none"
@@ -104,7 +108,7 @@ class Game {
       this.loadingTicket = true;
       let newTicket;
       setTimeout(() => {
-        newTicket = new Ticket(this.gameScreen, this.player.top - 200);
+        newTicket = new Ticket(this.gameScreen, this.player.top - 200 && this.jasmine.top + 110);
         this.tickets.push(newTicket);
         this.loadingTicket = false;
         this.fpsCounter = 0;
@@ -142,6 +146,7 @@ class Game {
 
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
+    this.gameWonScreen.style.display="none"
 
     
 }

@@ -10,6 +10,7 @@ class Player{
         this.imgSrc = imgSrc
         this.isMoving=false
         this.ticketCount = 0;
+        this.obstaclesCount=0
         
         
         this.enemy = false
@@ -22,7 +23,7 @@ class Player{
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
 
-        
+        this.obstacle=document.querySelectorAll(".obstacle")
         
         this.gameScreen.appendChild(this.element);
         
@@ -73,4 +74,22 @@ class Player{
             return false;
           }
     }
+
+    // didCollide(){
+        
+    //     const playerRect = this.element.getBoundingClientRect()
+    //     const obstacleRect = this.obstacle.element.getBoundingClientRect()
+    //     this.audioTicket = document.querySelector("#audio-ticket");
+    //     if (
+    //         playerRect.left < obstacleRect.right &&
+    //         playerRect.right > obstacleRect.left &&
+    //         playerRect.top < obstacleRect.bottom &&
+    //         playerRect.bottom > obstacleRect.top
+    //       ) {
+    //         this.obstaclesCount ++
+    //         return true;
+    //       } else {
+    //         return false;
+    //       }
+    // }
 }
