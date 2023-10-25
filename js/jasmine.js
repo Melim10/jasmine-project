@@ -25,9 +25,10 @@ class Jasmine{
     updateState(){
         let counterLoop = 0;
         let times = 0
+        let visualCounter = document.getElementById("counter");
+        let statsContainer = document.getElementById("stats");
         if(!this.startedInterval){
         this.startedInterval = true;
-        let visualCounter = document.getElementById("counter");
         let myCounterLoop = setInterval(() => {
         counterLoop ++;
         visualCounter.innerHTML = "0";
@@ -46,6 +47,7 @@ class Jasmine{
         this.loop = false;
         console.log(`this is the loop state ${this.loop}`)
         clearInterval(myCounterLoop);
+        statsContainer.style.display="none"
       }
     }, 1000)
 }

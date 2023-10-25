@@ -58,4 +58,10 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
   }
-  
+
+  #stats{
+    display: none;
+    font-size: 50px;
+    align-items: center;
+    padding-top: 300px;
+  }

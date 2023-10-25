@@ -2,6 +2,7 @@ window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   const restartButton2 = document.getElementById("restart-button2");
+  let statsContainer = document.getElementById("stats");
 
   startButton.addEventListener("click", function () {
     startGame();
@@ -10,6 +11,7 @@ window.onload = function () {
   function startGame() {
     game = new Game()
     game.start()
+    statsContainer.style.display="block"
   }
 
   
