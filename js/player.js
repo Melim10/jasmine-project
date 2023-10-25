@@ -1,7 +1,7 @@
 class Player{
     constructor(gameScreen, left, top, width, height, imgSrc){
         this.gameScreen = gameScreen
-        this.left = left
+        this.left = left 
         this.top = top
         this.width = width
         this.height = height
@@ -32,14 +32,14 @@ class Player{
         this.left += this.directionX;
         this.top += this.directionY;
 
-        if(this.left + this.width >= this.gameScreen.offsetWidth ){
-            this.left = this.gameScreen.offsetWidth - this.width
+        if(this.left + this.width >= this.gameScreen.offsetWidth -120){
+            this.left = (this.gameScreen.offsetWidth -120) - this.width
         } else if(this.left<=0){
-            this.left=0
+            this.left=120
         }
 
-        if(this.top + this.height >= this.gameScreen.offsetHeight){
-            this.top = this.gameScreen.offsetHeight - this.height
+        if(this.top + this.height >= this.gameScreen.offsetHeight -70){
+            this.top = (this.gameScreen.offsetHeight -70) - this.height
         } else if(this.top<=0){
             this.top=0
         }
