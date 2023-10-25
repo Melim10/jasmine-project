@@ -19,6 +19,8 @@ class Jasmine{
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
         
+        
+        
         this.gameScreen.appendChild(this.element);
     }
 
@@ -27,23 +29,27 @@ class Jasmine{
         let times = 0
         let visualCounter = document.getElementById("counter");
         let statsContainer = document.getElementById("stats");
+        
+
         if(!this.startedInterval){
         this.startedInterval = true;
         let myCounterLoop = setInterval(() => {
         counterLoop ++;
         visualCounter.innerHTML = "0";
+        
         if (counterLoop > 0 && counterLoop <= 3){
             visualCounter.innerHTML = counterLoop;
             this.state= false
         } else if (counterLoop >= 4 && counterLoop <= 5){
-            this.state = true;
+            this.state = true;   
+            
         } else if (counterLoop >= 5){
             counterLoop = 0;
             times++
             this.state=false
         } 
-      if(times===5){
-        console.log("OVER")
+
+      if(times===5 || this.loop === false){
         this.loop = false;
         console.log(`this is the loop state ${this.loop}`)
         clearInterval(myCounterLoop);

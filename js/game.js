@@ -5,6 +5,7 @@ class Game {
     this.gameScreen = document.querySelector("#game-screen");
     this.gameEndScreen = document.querySelector("#game-end");
     this.gameWonScreen = document.querySelector("#game-won");
+    
 
     this.statsContainer = document.getElementById("stats");
     this.player = new Player(
@@ -31,15 +32,23 @@ class Game {
         this.loadingTicket = false;
         this.ticketCount = 0;
         this.fpsCounter = null;
+        this.audioStart = document.querySelector("#audio-start");
+        this.audioWin = document.querySelector("#audio-win");
+        this.audioLose = document.querySelector("#audio-lose");
+        
       }
       
       start() {
+        // this.audioStart.play();
+
         this.gameScreen.style.width = `${this.width}px`;
         this.gameScreen.style.height = `${this.height}px`;
         
         this.startScreen.style.display = "none";
         
         this.gameScreen.style.display = "block";
+
+        
         
         this.gameLoop();
         this.jasmine.updateState();
@@ -56,16 +65,26 @@ class Game {
       }
       
       update() {
+        
+        
+
         if(this.fpsCounter != null){
           this.fpsCounter++;
         }
+        
+        // const jasmine1 = new Audio("./audio/hello-02.wav")
+        // jasmine1.volume = 0.04
+
         if (this.jasmine.state === true && this.player.isMoving === true) {
-          
           this.jasmine.loop=false
           this.statsContainer.style.display="none"
           this.endGame();
+
         } else if (this.jasmine.state === true && this.player.isMoving === false) {
-            this.jasmine.element.src = "images/jasmin angry.png";
+
+          this.jasmine.element.src = "images/jasmin angry.png";
+          // jasmine1.play()
+
         } else if (this.jasmine.state === false) {
             this.jasmine.element.src = "images/jasmin-sleeping.png";
       } 
@@ -89,12 +108,13 @@ class Game {
         this.tickets.push(newTicket);
         this.loadingTicket = false;
         this.fpsCounter = 0;
-      }, 4000);
+      }, 6000);
     } else {
       for (let i = 0; i < this.tickets.length; i++) {
         const ticket = this.tickets[i];
 
         if (this.player.didGetTicket(ticket)) {
+
           // Counter
           this.ticketCount++;
 
@@ -112,7 +132,9 @@ class Game {
   }
 
   endGame() {
+    
     this.gameIsOver = true;
+    // this.audioLose.play();
     this.player.element.remove();
     this.tickets.forEach((ticket) => {
       ticket.element.remove();
@@ -129,6 +151,7 @@ class Game {
   }
 
   gameWon(){
+    // this.audioWin.play();
     this.gameWonScreen.style.display = "block";
     this.gameEndScreen.style.display = "none";
     this.gameScreen.style.display = "none"

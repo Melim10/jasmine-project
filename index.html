@@ -19,14 +19,19 @@
   
         <div id="game-container">
           <div id="stats">
+            <audio id="audio-start" src="audio/start.wav"></audio>
+            <audio id="audio-ticket" src="audio/ticket.mp3"></audio>
             <p>Count </p><span id="counter">0</span>
           </div>
           <!-- #game-screen is initially hidden using CSS style display: none -->
-          <div id="game-screen"></div>
+          <div id="game-screen">
+            
+          </div>
         </div>
   
         <!-- #game-end is initially hidden using CSS style display: none -->
         <div id="game-end">
+          <audio id="audio-lose" src="audio/loser.mp3"></audio>
           <img src="images/logo (1).png" alt="" class="logo-img" />
           <h1>Game Over</h1>
           <h1>Next Time ask for more Tickets!!!</h1>
@@ -35,6 +40,7 @@
         </div>
 
         <div id="game-won">
+            <audio id="audio-win" src="audio/achievement.mp3"></audio>
             <img src="images/logo (1).png" alt="" class="logo-img" />
             <h1>Congratulations!!!</h1>
             <h1>You have completed a Lab sucessfully!!!</h1>

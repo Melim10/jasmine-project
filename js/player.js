@@ -10,7 +10,8 @@ class Player{
         this.imgSrc = imgSrc
         this.isMoving=false
         this.ticketCount = 0;
-
+        
+        
         this.enemy = false
         this.element = document.createElement("img")
 
@@ -20,6 +21,8 @@ class Player{
         this.element.style.height = `${this.height}px`
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
+
+        
         
         this.gameScreen.appendChild(this.element);
         
@@ -55,6 +58,7 @@ class Player{
     didGetTicket(ticket){
         const playerRect = this.element.getBoundingClientRect()
         const ticketRect = ticket.element.getBoundingClientRect()
+        this.audioTicket = document.querySelector("#audio-ticket");
         if (
             playerRect.left < ticketRect.right &&
             playerRect.right > ticketRect.left &&
@@ -63,6 +67,7 @@ class Player{
           ) {
             this.ticketCount ++;
             console.log(this.ticketCount)
+            // this.audioTicket.play();
             return true;
           } else {
             return false;
