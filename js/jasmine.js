@@ -12,6 +12,8 @@ class Jasmine{
         this.startedInterval=false
         this.gameEndScreen = document.querySelector("#game-end");
 
+        this.timesCount = 0;
+
         this.element.src = imgSrc
         this.element.style.position = "absolute"
         this.element.style.width = `${this.width}px`
@@ -42,8 +44,10 @@ class Jasmine{
             this.state= false
         } else if (counterLoop >= 4 && counterLoop <= 5){
             this.state = true;   
+            this.timesCount += 1;                           ////////////////////////7
             
         } else if (counterLoop >= 5){
+            
             counterLoop = 0;
             times++
             this.state=false

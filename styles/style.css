@@ -17,7 +17,6 @@ body {
   #game-screen {
     display: none;
     align-content: center;
-    padding: 20px 0px;
     overflow: hidden;
     position: relative;
     background-image: url(../images/Background-laptop.png);
@@ -31,22 +30,37 @@ body {
   
   #obstacles img{
     width: 125px;
-    height: 175px;
+    height: 125px;
   }
 
   .obstacle.one{
-    top: 200px;
-    left: 100px;
+    position: absolute;
+    top: 302px;
+    left: 160px;
   }
 
   .obstacle.two{
-    margin-top: 100px;
-    margin-right: 400px;
+    position: absolute;
+    top: 452px;
+    left: 430px;
   }
 
   .obstacle.three{
-    margin-left: 150px;
-    margin-top: 50px;
+    position: absolute;
+    top: 202px;
+    left: 680px;
+  }
+
+  .obstacle.four{
+    position: absolute;
+    top: 452px;
+    left: 930px;
+  }
+
+  .obstacle.five{
+    position: absolute;
+    top: 702px;
+    left: 1260px;
   }
  
   

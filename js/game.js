@@ -39,7 +39,7 @@ class Game {
       }
       
       start() {
-        // this.audioStart.play();
+        this.audioStart.play();
 
         this.gameScreen.style.width = `${this.width}px`;
         this.gameScreen.style.height = `${this.height}px`;
@@ -72,22 +72,51 @@ class Game {
           this.fpsCounter++;
         }
         
-        // const jasmine1 = new Audio("./audio/hello-02.wav")
-        // jasmine1.volume = 0.04
+        this.audioJasmine1 = document.querySelector("#audio-jasmine1");
+        this.audioJasmine2 = document.querySelector("#audio-jasmine2");
+        this.audioJasmine3 = document.querySelector("#audio-jasmine3");
+        this.audioJasmine4 = document.querySelector("#audio-jasmine4");
+        this.audioJasmine5 = document.querySelector("#audio-jasmine5");
 
-        // if(this.player.didCollide()){
-        //   console.log("COLLIDED")
-        // }
+        
+       
+       /*
+        const anyObstacle = this.obstacle.element;
+
+         if (this.player.didCollide(anyObstacle)){                  //////////////////////////////////////7
+          console.log("COLLIDED")
+         }
+         */
+         
+         
+         
+         
 
         if (this.jasmine.state === true && this.player.isMoving === true) {
           this.jasmine.loop=false
           this.statsContainer.style.display="none"
           this.endGame();
 
-        } else if (this.jasmine.state === true && this.player.isMoving === false) {
-
+        } else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 1) {  
           this.jasmine.element.src = "images/jasmin angry.png";
-          // jasmine1.play()
+          this.audioJasmine1.play()
+
+        }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 3) {
+            this.jasmine.element.src = "images/jasmin angry.png";
+            this.audioJasmine2.play()
+
+          }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 5) {
+            this.jasmine.element.src = "images/jasmin angry.png";
+            this.audioJasmine3.play()
+
+          }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 7) {
+            this.jasmine.element.src = "images/jasmin angry.png";
+            this.audioJasmine4.play()
+
+          }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 9) {
+            this.jasmine.element.src = "images/jasmin angry.png";
+            this.audioJasmine5.play()
+
 
         } else if (this.jasmine.state === false) {
             this.jasmine.element.src = "images/jasmin-sleeping.png";
@@ -138,7 +167,7 @@ class Game {
   endGame() {
     
     this.gameIsOver = true;
-    // this.audioLose.play();
+    this.audioLose.play();
     this.player.element.remove();
     this.tickets.forEach((ticket) => {
       ticket.element.remove();
@@ -156,7 +185,8 @@ class Game {
   }
 
   gameWon(){
-    // this.audioWin.play();
+    this.audioWin.play();
+    this.gameIsOver = true;
     this.gameWonScreen.style.display = "block";
     this.gameEndScreen.style.display = "none";
     this.gameScreen.style.display = "none"

@@ -10,7 +10,7 @@ class Player{
         this.imgSrc = imgSrc
         this.isMoving=false
         this.ticketCount = 0;
-        this.obstaclesCount=0
+
         
         
         this.enemy = false
@@ -35,7 +35,7 @@ class Player{
 
         if(this.left + this.width >= this.gameScreen.offsetWidth -120){
             this.left = (this.gameScreen.offsetWidth -120) - this.width
-        } else if(this.left<=0){
+        } else if(this.left<=120){
             this.left=120
         }
 
@@ -68,28 +68,26 @@ class Player{
           ) {
             this.ticketCount ++;
             console.log(this.ticketCount)
-            // this.audioTicket.play();
+            this.audioTicket.play();
             return true;
           } else {
             return false;
           }
     }
 
-    // didCollide(){
+     didCollide(obstacle){                                                                            //////////////////7
         
-    //     const playerRect = this.element.getBoundingClientRect()
-    //     const obstacleRect = this.obstacle.element.getBoundingClientRect()
-    //     this.audioTicket = document.querySelector("#audio-ticket");
-    //     if (
-    //         playerRect.left < obstacleRect.right &&
-    //         playerRect.right > obstacleRect.left &&
-    //         playerRect.top < obstacleRect.bottom &&
-    //         playerRect.bottom > obstacleRect.top
-    //       ) {
-    //         this.obstaclesCount ++
-    //         return true;
-    //       } else {
-    //         return false;
-    //       }
-    // }
+         const playerRect = this.element.getBoundingClientRect()
+         const obstacleRect = obstacle.element.getBoundingClientRect()
+         if (
+             playerRect.left < obstacleRect.right &&
+             playerRect.right > obstacleRect.left &&
+             playerRect.top < obstacleRect.bottom &&
+             playerRect.bottom > obstacleRect.top
+           ) {
+             return true;
+           } else {
+             return false;
+           }
+     }
 }
