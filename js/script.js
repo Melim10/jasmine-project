@@ -14,8 +14,6 @@ window.onload = function () {
     statsContainer.style.display="block"
   }
 
-  
-  
 
   // function that handles keys events
   function handleKeyDown(event){
@@ -35,40 +33,40 @@ window.onload = function () {
         switch(key){
           case "ArrowLeft":
             if(game.ticketCounter() === 0){
-              game.player.directionX = -1;
+              game.player.directionX = -0.3;
             }
             else {
-              game.player.directionX = game.ticketCounter() * -2;
+              game.player.directionX = (game.ticketCounter() * -2)/3;
             }
             game.player.isMoving= true
             break;
 
           case "ArrowUp":
             if(game.ticketCounter() === 0){
-              game.player.directionY = -1;
+              game.player.directionY = -0.3;
             }
             else {
-              game.player.directionY = game.ticketCounter() * -2;
+              game.player.directionY = (game.ticketCounter() * -2)/3;
             }
             game.player.isMoving= true
             break; 
 
           case "ArrowRight":
             if(game.ticketCounter() === 0){
-              game.player.directionX = 1;
+              game.player.directionX = 0.3;
             }
             else {
-              game.player.directionX = game.ticketCounter() * 2;
+              game.player.directionX = (game.ticketCounter() * 2)/3;
             }
             game.player.isMoving= true
             break; 
           
           case "ArrowDown":
             if(game.ticketCounter() === 0){
-              game.player.directionY = 1;
+              game.player.directionY = 0.3;
             }
             else {
-              game.player.directionY = game.ticketCounter() * 2;
+              game.player.directionY = (game.ticketCounter() * 2)/3;
             }
             game.player.isMoving= true
             break

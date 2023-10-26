@@ -16,7 +16,7 @@ class Game {
       1000,
       150,
       150,
-      "images/student 02.png"
+      "images/student 02-.png"
       );
       
       this.jasmine = new Jasmine(
@@ -80,18 +80,6 @@ class Game {
         this.audioJasmine4 = document.querySelector("#audio-jasmine4");
         this.audioJasmine5 = document.querySelector("#audio-jasmine5");
 
-        
-       
-       /*
-        const anyObstacle = this.obstacle.element;
-
-         if (this.player.didCollide(anyObstacle)){                  //////////////////////////////////////7
-          console.log("COLLIDED")
-         }
-         */
-         
-         
-         
          
 
         if (this.jasmine.state === true && this.player.isMoving === true) {
