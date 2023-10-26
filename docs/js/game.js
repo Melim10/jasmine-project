@@ -16,7 +16,7 @@ class Game {
       1000,
       150,
       150,
-      "images/student 02-.png"
+      "./images/student 02-.png"
       );
       
       this.jasmine = new Jasmine(
