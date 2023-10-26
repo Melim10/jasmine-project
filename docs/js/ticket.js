@@ -7,7 +7,7 @@ class Ticket{
         this.height = 150
         this.element = document.createElement("img")
 
-        this.element.src= "images/ticket.png"
+        this.element.src= "docs/images/ticket.png"
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;

@@ -16,7 +16,7 @@ class Game {
       1000,
       150,
       150,
-      "./docs/images/student 02-.png"
+      "docs/images/student 02-.png"
       );
       
       this.jasmine = new Jasmine(
@@ -25,7 +25,7 @@ class Game {
         35,
         150,
         150,
-        "./docs/images/jasmin sleeping.png"
+        "docs/images/jasmin sleeping.png"
         );
         this.height = 930;
         this.width = 1550;
@@ -88,28 +88,28 @@ class Game {
           this.endGame();
 
         } else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 1) {  
-          this.jasmine.element.src = "images/jasmin angry.png";
+          this.jasmine.element.src = "docs/images/jasmin angry.png";
           this.audioJasmine1.play()
 
         }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 3) {
-            this.jasmine.element.src = "images/jasmin angry.png";
+            this.jasmine.element.src = "docs/images/jasmin angry.png";
             this.audioJasmine2.play()
 
           }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 5) {
-            this.jasmine.element.src = "images/jasmin angry.png";
+            this.jasmine.element.src = "docs/images/jasmin angry.png";
             this.audioJasmine3.play()
 
           }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 7) {
-            this.jasmine.element.src = "images/jasmin angry.png";
+            this.jasmine.element.src = "docs/images/jasmin angry.png";
             this.audioJasmine4.play()
 
           }  else if (this.jasmine.state === true && this.player.isMoving === false && this.jasmine.timesCount === 9) {
-            this.jasmine.element.src = "images/jasmin angry.png";
+            this.jasmine.element.src = "docs/images/jasmin angry.png";
             this.audioJasmine5.play()
 
 
         } else if (this.jasmine.state === false) {
-            this.jasmine.element.src = "images/jasmin-sleeping.png";
+            this.jasmine.element.src = "docs/images/jasmin-sleeping.png";
       } 
 
     if (this.jasmine.loop === false) {
