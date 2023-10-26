@@ -33,7 +33,7 @@ window.onload = function () {
         switch(key){
           case "ArrowLeft":
             if(game.ticketCounter() === 0){
-              game.player.directionX = -0.4;
+              game.player.directionX = -0.5;
             }
             else {
               game.player.directionX = (game.ticketCounter() * -2)/3;
@@ -43,7 +43,7 @@ window.onload = function () {
 
           case "ArrowUp":
             if(game.ticketCounter() === 0){
-              game.player.directionY = -0.4;
+              game.player.directionY = -0.5;
             }
             else {
               game.player.directionY = (game.ticketCounter() * -2)/3;
@@ -53,7 +53,7 @@ window.onload = function () {
 
           case "ArrowRight":
             if(game.ticketCounter() === 0){
-              game.player.directionX = 0.4;
+              game.player.directionX = 0.5;
             }
             else {
               game.player.directionX = (game.ticketCounter() * 2)/3;
@@ -63,7 +63,7 @@ window.onload = function () {
           
           case "ArrowDown":
             if(game.ticketCounter() === 0){
-              game.player.directionY = 0.4;
+              game.player.directionY = 0.5;
             }
             else {
               game.player.directionY = (game.ticketCounter() * 2)/3;
