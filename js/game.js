@@ -5,6 +5,8 @@ class Game {
     this.gameScreen = document.querySelector("#game-screen");
     this.gameEndScreen = document.querySelector("#game-end");
     this.gameWonScreen = document.querySelector("#game-won");
+    this.obstacles=[];
+    this.loadingObstacle = false;
     
 
     this.statsContainer = document.getElementById("stats");
@@ -132,12 +134,39 @@ class Game {
 
     this.player.move();
 
+    if (!this.obstacles.length && !this.loadingObstacle) {
+      this.loadingObstacle = true;
+      setTimeout(() => {
+        this.obstacles.push(new Obstacle(this.gameScreen, 100));
+        this.obstacles.push(new Obstacle(this.gameScreen, 250));
+        this.obstacles.push(new Obstacle(this.gameScreen, 400));
+        this.obstacles.push(new Obstacle(this.gameScreen, 550));
+        this.obstacles.push(new Obstacle(this.gameScreen, 550));
+        this.loadingObstacle = false;
+      }, 500);
+    }
+
+    for (let i = 0; i < this.obstacles.length; i++) {
+      const obstacle = this.obstacles[i];
+      obstacle.move();
+
+      if (this.player.didCollide(obstacle)) {
+        this.endGame()
+
+        this.obstacles.splice(i, 1);
+
+      } else if (obstacle.top > this.height) {
+        obstacle.element.remove();
+        this.obstacles.splice(i, 1);
+      }
+    }
+
     if (!this.tickets.length && !this.loadingTicket) {
       // Info Varible that ticket is being loaded
       this.loadingTicket = true;
       let newTicket;
       setTimeout(() => {
-        newTicket = new Ticket(this.gameScreen, this.player.top - 200 && this.jasmine.top + 110);
+        newTicket = new Ticket(this.gameScreen, this.player.top - this.jasmine.top);
         this.tickets.push(newTicket);
         this.loadingTicket = false;
         this.fpsCounter = 0;
@@ -176,6 +205,7 @@ class Game {
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
     this.gameWonScreen.style.display="none"
+    this.statsContainer.style.display="none"
 
     
 }
