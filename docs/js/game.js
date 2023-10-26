@@ -16,7 +16,7 @@ class Game {
       1000,
       150,
       150,
-      "./images/student 02-.png"
+      "./docs/images/student 02-.png"
       );
       
       this.jasmine = new Jasmine(
@@ -25,7 +25,7 @@ class Game {
         35,
         150,
         150,
-        "images/jasmin-sleeping.png"
+        "./docs/images/jasmin sleeping.png"
         );
         this.height = 930;
         this.width = 1550;
